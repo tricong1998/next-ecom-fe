@@ -1,8 +1,6 @@
-import { Button } from "@/components/ui/button";
-import { ShoppingCart, UserIcon } from "lucide-react";
 import Link from "next/link";
-import ModelToggle from "./model-toggle";
 import Logo from "../logo";
+import Menu from "./menu";
 
 const Header = () => {
   return (
@@ -16,19 +14,7 @@ const Header = () => {
             </span>
           </Link>
         </div>
-        <div className="space-x-2 flex-between">
-          <ModelToggle></ModelToggle>
-          <Button variant={"ghost"} asChild>
-            <Link href={"/cart"}>
-              <ShoppingCart></ShoppingCart> Cart
-            </Link>
-          </Button>
-          <Button asChild>
-            <Link href={"/user"}>
-              <UserIcon></UserIcon> Sign In
-            </Link>
-          </Button>
-        </div>
+        <Menu></Menu>
       </div>
     </header>
   );
