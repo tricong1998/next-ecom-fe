@@ -7,6 +7,7 @@ import {
 import { IProduct } from "./product-type";
 import Image from "next/image";
 import Link from "next/link";
+import ProductPrice from "./product-price";
 
 const ProductCard = ({ product }: { product: IProduct }) => {
   return (
@@ -32,7 +33,7 @@ const ProductCard = ({ product }: { product: IProduct }) => {
       <CardFooter className="flex-between p-4">
         <div>{product.rating}</div>
         {product.stock > 0 ? (
-          <p className="font-bold">{product.price}</p>
+          <ProductPrice value={product.price}></ProductPrice>
         ) : (
           <p className="text-destructive">Out of stock</p>
         )}
